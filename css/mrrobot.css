@@ -84,6 +84,7 @@ h2 {
 .weapons,
 .fight {
     background-color: black;
+    width: 20rem;
     font-size: 1.6rem;
     border: solid white 2px;
     border-radius: 3px;
