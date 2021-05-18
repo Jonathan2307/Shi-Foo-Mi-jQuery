@@ -1,45 +1,3 @@
-<!DOCTYPE html>
-<html lang="en">
-
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="./normalize.css" />
-    <link rel="stylesheet" href="./css/mrrobot.css">
-    <title>shi fu mi - Mr ROBOT</title>
-</head>
-
-<body>
-    <div class="main-wrapper">
-    <h1>shi fu mi with jQuery</h1>
-    <div class="player">
-        <h2>Mr. Robot</h2>
-    </div>
-    <div class="btn-weapons">
-
-        <button class="weapons" id="weapon1" data-name="pierre">Ddos Attack</button>
-        <button class="weapons" id="weapon2" data-name="papier">Brute-force</button>
-        <button class="weapons" id="weapon3" data-name="ciseau">SQL injection attack</button>
-    </div>
-
-
-    <div>
-        <button class="fight" data-name="fight">Push the hack</button>
-    </div>
-
-    <div id="result" class="result clignote"></div>
-
-    <div class="ai">
-        <h2><img id="ai-logo" class="ai-logo" src="./Evil-Corp-Logo-Wallpaper.jpg" alt="Logo evil corp"></h2>
-    </div>
-</div>
-    <img class="pointer" src="pointer.png">
-
-    <script src="https://code.jquery.com/jquery-3.6.0.js"
-        integrity="sha256-H+K7U5CnXl1h5ywQfKtSj8PCmoN9aaq30gDh27Xc0jk=" crossorigin="anonymous"></script>
-        <script src="./js/mrrobot.js"></script>
-    <!-- <script>
         let shifumi = ['pierre', 'papier', 'ciseau']
         let playerWeapon
         let AIWeapon
@@ -60,7 +18,7 @@
         })
 
         $('.fight').click(function () {
-            
+
             if (playerWeapon == AIWeapon) {
                 whoWin = 'CONNECTION REFUSED, TRY AGAIN'
                 console.log(whoWin)
@@ -132,7 +90,3 @@
             $("#weapon2").css("background-color", "black").css("color", "red");
             $("#weapon3").css("background-color", "red").css("color", "black");
         })
-    </script> -->
-</body>
-
-</html>
