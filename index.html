@@ -5,28 +5,153 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+        @font-face {
+            font-family: sega;
+            src: url(./SEGA.TTF);
+        }
+        body {
+            font-family: sega, Arial, Helvetica, sans-serif !important;
+            background-color: black;
+        }
+        .player,
+        .ai {
+            display: flex;
+            justify-content: center;
+            font-size: 3.5rem;
 
+            color: red;
+        }
+
+        .weapons {
+            display: flex;
+            flex-direction: column;
+            justify-content: stretch;
+        }
+
+        .fight {
+            display: flex;
+            justify-content: center;
+        }
+
+        .ai-weapon {
+            width: 5rem;
+            height: auto;
+        }
+
+    </style>
     <title>shi fu mi</title>
 </head>
 
 <body>
-    <h1>shi fu mi with Jquery</h1>
+    <h1>shi fu mi with jQuery</h1>
 
-    <button class="button" data-name="Pierre">Pierre</button>
-    <button class="button" data-name="Feuille">Feuille</button>
-    <button class="button" data-name="Ciseau">Ciseau</button>
-    <button class="button" data-name="Fight">Fight!</button>
+    <div class="player">
+        <h2>Mr Robot</h2>
+    </div>
 
+    <div>
+        <button class="weapons" data-name="pierre">Pierre</button>
+        <button class="weapons" data-name="papier">Papier</button>
+        <button class="weapons" data-name="ciseau">Ciseau</button>
+    </div>
+    <div>
+        <button class="fight" data-name="fight">Fight!</button>
 
+    </div>
+    <div>
+        <span class="ai-weapon"></span>
+    </div>
+    <div class="ai">
+        <h2><img src="./Evil-Corp-Logo-Wallpaper.jpg" alt="Logo evil corp"></h2>
+    </div>
 
 
 
     <script src="https://code.jquery.com/jquery-3.6.0.js"
         integrity="sha256-H+K7U5CnXl1h5ywQfKtSj8PCmoN9aaq30gDh27Xc0jk=" crossorigin="anonymous"></script>
     <script>
-        $('.button').click(function (){
-            console.log($(this).data('name'))
+        let shifumi = ['pierre', 'papier', 'ciseau']
+        let playerWeapon
+        let AIWeapon
+        let whoWin
+
+        function getRandomInt(max) {
+            return shifumi[Math.floor(Math.random() * max)];
+        }
+
+        $('.weapons').click(function () {
+
+            playerWeapon = $(this).data('name');
+            console.log('player : ' + $(this).data('name'));
+
+            AIWeapon = getRandomInt(shifumi.length);
+            console.log('IA : ' + AIWeapon);
         })
+
+        $('.fight').click(function () {
+            console.log('player : ' + playerWeapon);
+            console.log('IA : ' + AIWeapon);
+
+            if (playerWeapon == AIWeapon) {
+                whoWin = 'egalite'
+                console.log(whoWin)
+                whoWin = "";
+
+            } else if (playerWeapon == 'pierre' && AIWeapon == 'papier') {
+                whoWin = 'Mr Robot win'
+                console.log(whoWin)
+                whoWin = "";
+
+            } else if (playerWeapon == 'pierre' && AIWeapon == 'ciseau') {
+                whoWin = 'Player win'
+                console.log(whoWin)
+                whoWin = "";
+
+            } else if (playerWeapon == 'papier' && AIWeapon == 'ciseau') {
+                whoWin = 'Mr Robot win'
+                console.log(whoWin)
+                whoWin = "";
+
+            } else if (playerWeapon == 'papier' && AIWeapon == 'pierre') {
+                whoWin = 'Player win'
+                console.log(whoWin)
+                whoWin = "";
+
+            } else if (playerWeapon == 'ciseau' && AIWeapon == 'pierre') {
+                whoWin = 'Mr Robot win'
+                console.log(whoWin)
+                whoWin = "";
+
+            } else if (playerWeapon == 'ciseau' && AIWeapon == 'papier') {
+                whoWin = 'Player win'
+                console.log(whoWin)
+                whoWin = "";
+
+            }
+            console.log(whoWin)
+        })
+
+
+
+        function restart() {
+            whoWin = ""
+        }
+        $('.restart').click(function () {
+            restart()
+        });
+
+
+
+        // if (playerWeapon == 'pierre' && AIWeapon == 'papier' || playerWeapon ==
+        //     'papier' && AIWeapon == 'ciseau' || playerWeapon == 'ciseau' && AIWeapon ==
+        //     'pierre') {
+        //     return whoWin = 'Mr Robot gagne'
+        //     console.log(whoWin)
+        // } else {
+        //     return whoWin = 'Player gagne'
+        //     console.log(whoWin)
+        // }
     </script>
 </body>
 
