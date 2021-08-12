@@ -1,4 +1,4 @@
-        let shifumi = ['pierre', 'papier', 'ciseau']
+        const shifumi = ['pierre', 'papier', 'ciseau']
         let playerWeapon
         let AIWeapon
         let whoWin
@@ -79,19 +79,6 @@
                 whoWin = "";
             }
         })
-
-        //fonction pour coller une image sur la souris
-        //         $(document).ready(function() {
-        //             $(document).mousemove(function(e) {
-        //             pointer = $('<img>').attr({'src':'pointer.png'});
-        //             $(document.body).append(pointer);
-        //             pointer.css({
-        //                         'position':'absolute',
-        //                         top: e.pageY +2 ,    //offsets
-        //                         left: e.pageX +2   //offsets
-        //                     }).fadeOut(1000);   
-        //     });
-        // })
 
         //ces fonctions changent les couleurs des boutons des armes au clic 
         $("#weapon1").click(function () {

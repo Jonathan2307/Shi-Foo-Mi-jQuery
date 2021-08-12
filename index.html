@@ -12,127 +12,33 @@
 
 <body>
     <div class="main-wrapper">
-    <h1>shi fu mi with jQuery</h1>
-    <div class="player">
-        <h2>Mr. Robot</h2>
+        <h1>shi fu mi with jQuery</h1>
+        <div class="player">
+            <h2>Mr. Robot</h2>
+        </div>
+        <div class="btn-weapons">
+
+            <button class="weapons" id="weapon1" data-name="pierre">Ddos Attack</button>
+            <button class="weapons" id="weapon2" data-name="papier">Brute-force</button>
+            <button class="weapons" id="weapon3" data-name="ciseau">SQL injection attack</button>
+        </div>
+
+
+        <div>
+            <button class="fight" data-name="fight">Push </button>
+        </div>
+
+        <div id="result" class="result clignote"></div>
+
+        <div class="ai">
+            <h2><img id="ai-logo" class="ai-logo" src="./Evil-Corp-Logo-Wallpaper.jpg" alt="Logo evil corp"></h2>
+        </div>
     </div>
-    <div class="btn-weapons">
-
-        <button class="weapons" id="weapon1" data-name="pierre">Ddos Attack</button>
-        <button class="weapons" id="weapon2" data-name="papier">Brute-force</button>
-        <button class="weapons" id="weapon3" data-name="ciseau">SQL injection attack</button>
-    </div>
-
-
-    <div>
-        <button class="fight" data-name="fight">Push </button>
-    </div>
-
-    <div id="result" class="result clignote"></div>
-
-    <div class="ai">
-        <h2><img id="ai-logo" class="ai-logo" src="./Evil-Corp-Logo-Wallpaper.jpg" alt="Logo evil corp"></h2>
-    </div>
-</div>
     <img class="pointer" src="pointer.png">
 
     <script src="https://code.jquery.com/jquery-3.6.0.js"
         integrity="sha256-H+K7U5CnXl1h5ywQfKtSj8PCmoN9aaq30gDh27Xc0jk=" crossorigin="anonymous"></script>
-        <script src="./js/mrrobot.js"></script>
-    <!-- <script>
-        let shifumi = ['pierre', 'papier', 'ciseau']
-        let playerWeapon
-        let AIWeapon
-        let whoWin
-
-        function getRandomInt(max) {
-            return shifumi[Math.floor(Math.random() * max)];
-        }
-
-        $('.weapons').click(function () {
-            $('.result').empty()
-
-            playerWeapon = $(this).data('name');
-            console.log('player : ' + $(this).data('name'));
-
-            AIWeapon = getRandomInt(shifumi.length);
-            console.log('IA : ' + AIWeapon);
-        })
-
-        $('.fight').click(function () {
-            
-            if (playerWeapon == AIWeapon) {
-                whoWin = 'CONNECTION REFUSED, TRY AGAIN'
-                console.log(whoWin)
-                $('.result').html(whoWin)
-                whoWin = "";
-
-            } else if (playerWeapon == 'pierre' && AIWeapon == 'papier') {
-                whoWin = 'EVIL CORP ABORT THE HACK (ಥ﹏ಥ)'
-                console.log(whoWin)
-                $('.result').prepend(whoWin)
-                whoWin = "";
-
-            } else if (playerWeapon == 'pierre' && AIWeapon == 'ciseau') {
-                whoWin = `EVIL CORP HACKED ╭∩╮(-_-)╭∩╮`
-                console.log(whoWin)
-                $('.result').prepend(whoWin)
-                whoWin = "";
-
-            } else if (playerWeapon == 'papier' && AIWeapon == 'ciseau') {
-                whoWin = 'EVIL CORP ABORT THE HACK (ಥ﹏ಥ)'
-                console.log(whoWin)
-                $('.result').prepend(whoWin)
-                whoWin = "";
-
-            } else if (playerWeapon == 'papier' && AIWeapon == 'pierre') {
-                whoWin = 'EVIL CORP HACKED ╭∩╮(-_-)╭∩╮'
-                console.log(whoWin)
-                $('.result').prepend(whoWin)
-                whoWin = "";
-
-            } else if (playerWeapon == 'ciseau' && AIWeapon == 'pierre') {
-                whoWin = 'EVIL CORP ABORT THE HACK (ಥ﹏ಥ)'
-                console.log(whoWin)
-                $('.result').prepend(whoWin)
-                whoWin = "";
-
-            } else if (playerWeapon == 'ciseau' && AIWeapon == 'papier') {
-                whoWin = 'EVIL CORP HACKED ╭∩╮(-_-)╭∩╮'
-                console.log(whoWin)
-                $('.result').prepend(whoWin)
-                whoWin = "";
-            }
-        })
-
-        //         $(document).ready(function() {
-        //             $(document).mousemove(function(e) {
-        //             pointer = $('<img>').attr({'src':'pointer.png'});
-        //             $(document.body).append(pointer);
-        //             pointer.css({
-        //                         'position':'absolute',
-        //                         top: e.pageY +2 ,    //offsets
-        //                         left: e.pageX +2   //offsets
-        //                     }).fadeOut(1000);   
-        //     });
-        // })
-
-        $("#weapon1").click(function () {
-            $("#weapon1").css("background-color", "red").css("color", "black");
-            $("#weapon2").css("background-color", "black").css("color", "red");
-            $("#weapon3").css("background-color", "black").css("color", "red");
-        })
-        $("#weapon2").click(function () {
-            $("#weapon1").css("background-color", "black").css("color", "red");
-            $("#weapon2").css("background-color", "red").css("color", "black");
-            $("#weapon3").css("background-color", "black").css("color", "red");
-        })
-        $("#weapon3").click(function () {
-            $("#weapon1").css("background-color", "black").css("color", "red");
-            $("#weapon2").css("background-color", "black").css("color", "red");
-            $("#weapon3").css("background-color", "red").css("color", "black");
-        })
-    </script> -->
+    <script src="./js/mrrobot.js"></script>
 </body>
 
 </html>
